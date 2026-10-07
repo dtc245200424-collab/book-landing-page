@@ -1,0 +1,85 @@
+/* Reset CSS */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f8f9fa;
+  padding: 20px;
+  color: #333;
+}
+
+header {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+header h1 {
+  font-size: 28px;
+  margin-bottom: 10px;
+}
+
+/* --- Khung gallery chính (Sử dụng CSS Grid) --- */
+.gallery {
+  display: grid;
+  /* Mặc định trên màn hình > 700px: 4 cột trên 1 dòng */
+  grid-template-columns: repeat(4, 1fr);
+  gap: 15px;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.gallery-item {
+  background-color: #ffffff;
+  border: 1px solid #ccc;
+  border-radius: 6px;
+  overflow: hidden;
+  transition:
+    transform 0.2s,
+    box-shadow 0.2s;
+}
+
+.gallery-item:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+}
+
+.gallery-item img {
+  width: 100%;
+  height: auto;
+  display: block;
+}
+
+.desc {
+  padding: 12px;
+  text-align: center;
+  font-size: 14px;
+  color: #555;
+  background-color: #fff;
+}
+
+footer {
+  text-align: center;
+  margin-top: 40px;
+  color: #777;
+  font-size: 14px;
+}
+
+/* --- MEDIA QUERIES --- */
+
+/* Màn hình nhỏ hơn hoặc bằng 700px: Hiển thị 2 ảnh / dòng */
+@media (max-width: 700px) {
+  .gallery {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+/* Màn hình nhỏ hơn hoặc bằng 500px: Hiển thị 1 ảnh / dòng */
+@media (max-width: 500px) {
+  .gallery {
+    grid-template-columns: 1fr;
+  }
+}
